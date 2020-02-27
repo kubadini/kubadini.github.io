@@ -36,7 +36,7 @@
 .caption {
     flex: 0 2 auto;
     background-color: wheat ;
-    margin: 13px;
+    margin-right: margin: 5px 0px 0 0;
     border: dashed .5px #2a2a2a;
 
 
@@ -52,7 +52,7 @@
 
 .picture {
     flex: 0 1 auto;
-    width: 350px;
+    width: 250px;
     margin-right: 10px;
 }
 
@@ -75,7 +75,6 @@
     font-family: 'Caladea';
     color: wheat;
     text-shadow: 3px 3px 1px rgb(134, 92, 74);
-    font-weight: 700px
   }
   
   h2{
@@ -85,8 +84,13 @@
 
   }
 
-  p,li {
-    font-family: 'Roboto Condensed', sans-serif;
+  .description,li {
+    font-family: 'Roboto';
+    color: #2a2a2a;
+  }
+
+  .jobtitle {
+    font-family: 'Mali';
     color: #2a2a2a;
   }
   
@@ -94,6 +98,9 @@
 @media screen and (max-width: 1000px){
 .content{
     justify-content: center;
+}
+.caption{
+    margin-top: 15px;
 }
 .picture{
     display: flex;
