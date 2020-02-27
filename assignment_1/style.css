@@ -7,7 +7,6 @@
 
   .header {
     background-color: rgb(22, 8, 19);
-    color: lavenderblush;
     margin: 0;
     margin-bottom: 15px;
     display: flex;
@@ -36,8 +35,8 @@
 .caption {
     flex: 0 2 auto;
     background-color: wheat ;
-    margin-right: margin: 5px 0px 0 0;
-    border: dashed .5px #2a2a2a;
+    margin: 5px 0px 0 0;
+    border: inset 1px #2a2a2a;
 
 
 }
@@ -64,13 +63,10 @@
     flex: 0 2 auto;
     background-color: wheat ;
     padding: 15px;
-    border: dashed .5px #2a2a2a;
+    border: inset 1px #2a2a2a;
 
 }
-    
-
-  /* || typography */
-  
+      
   h1{
     font-family: 'Caladea';
     color: wheat;
@@ -84,14 +80,16 @@
 
   }
 
-  .description,li {
-    font-family: 'Roboto';
+  .description,li,p {
+    font-family: 'Charm';
     color: #2a2a2a;
+    font-weight: 400;
   }
 
   .jobtitle {
-    font-family: 'Mali';
+    font-family: 'Charm';
     color: #2a2a2a;
+    font-weight: 700;
   }
   
   /* || media query*/
