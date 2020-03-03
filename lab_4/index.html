@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Prof A's Demo Page</title>
+    <title>Kimberly's Demo Page</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
 
   <body>
     <div class="container">
       <div class="wrapper">
-        <div class="header">Prof A's Demo Page</div>
+        <div class="header">Kimberly's Demo Page</div>
         <button class="button" onclick="clickMe()">
           Click me to make a change
         </button>
@@ -28,7 +28,22 @@
       function clickMe() {
         const content = document.querySelector(".content");
         content.innerHTML = "Hello world";
+        let myfName = 'Kimberly'
+        let mylName= 'Ubadiniru'
+        let myName = myfName + mylName;
+        const paraOne = document.createElement('p');
+            paraOne.textContent= 'my name has '+ myName.length + ' characters';
+            content.appendChild(paraOne);
+
+            const paraTwo = document.createElement('p')
+            let cap = myName[2].toUpperCase();
+            paraTwo.textContent = 'the third character in my name is ' + cap ;
+            return content.appendChild(paraTwo);
+            const newLine = document.createElement('br')
+            paraTwo.appendChild(newLine)
       }
+      
+
     </script>
   </body>
 </html>
