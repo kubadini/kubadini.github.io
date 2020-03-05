@@ -28,19 +28,24 @@
       function clickMe() {
         const content = document.querySelector(".content");
         content.innerHTML = "Hello world";
-        let myfName = 'Kimberly'
-        let mylName= 'Ubadiniru'
-        let myName = myfName + mylName;
+        let myName = 'KimberlyUbadiniru';
         const paraOne = document.createElement('p');
             paraOne.textContent= 'my name has '+ myName.length + ' characters';
             content.appendChild(paraOne);
 
-            const paraTwo = document.createElement('p')
+        
             let cap = myName[2].toUpperCase();
-            paraTwo.textContent = 'the third character in my name is ' + cap ;
-            return content.appendChild(paraTwo);
-            const newLine = document.createElement('br')
-            paraTwo.appendChild(newLine)
+            const paraTwo = document.createElement('p');
+            paraTwo.innerHTML = 'the third character in my name is ' + cap 
+            + ' <br> ' + myName.slice(-3);
+            content.appendChild(paraTwo);        
+        
+        let myfName = myName.substr(0,8);
+        let mylName = myName.substr(8,myName.length);
+        let totalLen = myfName.length + mylName.length; 
+        const header = document.querySelector(".header");
+        header.append(" " + totalLen);
+        
       }
       
 
