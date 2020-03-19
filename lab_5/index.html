@@ -290,6 +290,7 @@
    
     for (i = 0; i < 25; i++){
       if (i<25){
+      arrayRandom.push(randomCountry)
       var randomCountry = (Math.floor(Math.random() * countries.length));
       var listItem = document.createElement("li");
       var country = countries[randomCountry].code;
@@ -298,10 +299,14 @@
       var countryText = document.createTextNode(displayCountr);
       listItem.appendChild(countryText);
       document.querySelector(".countries").appendChild(listItem)
-      }
-      else(arrayRandom.push(listItem))
       console.log(arrayRandom)
-           
+      }
+      else if(i > 25)
+      var countryo = countries.code;
+      var listNameo = countries.name;
+      var displayCountro = countryo + ' ' + listNameo;
+      var countryTexto = document.createTextNode(displayCountro);
+      console.log(countryTexto);
     }
     }
 
