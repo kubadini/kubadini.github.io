@@ -282,26 +282,24 @@
     ]
     console.log("List of countries in the world", countries);
     function clickMe() {
-    let arrayRandom = [];
-    content.innerHTML = countries;
-    const orList = document.createElement('ol');
-    content.appendChild(orList);
-    orList.className ='countries';
-    countries.appendChild(arrayRandom)
-     
-    for (i = 0; i < 25; i++){
-      RandCountries = Math.floor(Math.random()* 242)
-      if (i <= 25){
-        arrayRandom.push(RandCountries)
-        console.log(countries)
-      }
-        else{
-          break;
-        
-      }
+    let allCountries = document.querySelector(".content");
+    allCountries.innerHTML = '<ol class ="countries"></ol>';
+    let arrayRandom = []
 
-    }
     
+   
+    for (i = 0; i < 25; i++){
+      var randomCountry = (Math.floor(Math.random() * countries.length));
+      var listItem = document.createElement("li");
+      var country = countries[randomCountry].code;
+      var listName = countries[randomCountry].name;
+      var displayCountr = country + ' ' + listName;
+      var countryText = document.createTextNode(displayCountr);
+      listItem.appendChild(countryText);
+      arrayRandom.push(listItem);
+      document.querySelector(".countries").appendChild(listItem)
+      }
+           
     }
 
     
