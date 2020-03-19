@@ -289,6 +289,7 @@
     
    
     for (i = 0; i < 25; i++){
+      if (i<25){
       var randomCountry = (Math.floor(Math.random() * countries.length));
       var listItem = document.createElement("li");
       var country = countries[randomCountry].code;
@@ -296,13 +297,17 @@
       var displayCountr = country + ' ' + listName;
       var countryText = document.createTextNode(displayCountr);
       listItem.appendChild(countryText);
-      arrayRandom.push(listItem);
       document.querySelector(".countries").appendChild(listItem)
       }
+      else(arrayRandom.push(listItem))
+      console.log(arrayRandom)
            
     }
+    }
 
-    
+    // psuedo code//
+
+    // for 
 
 
   
