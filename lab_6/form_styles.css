@@ -1,15 +1,134 @@
+body{
+    background-color: #f5f5f5;
+}
+div.wrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+
+
+
+
+}
+
 form {
-
-}
-
-label {
-
-}
-
-input, textarea {
+    /* Center the form on the page */
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    width: 400px;
+    /* Form outline */
+    text-align: left;
     
-}
+    
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font: courier;
 
-ul {
+  }
+  h1{
+      color:rgb(75, 71, 71);
+      font-family: sans-serif;
+      font-weight: bold;
+      text-align: left;
+      margin-right: 3em;
+      
+  }
+  form li + li {
+    margin-top: 1em;
 
-}
+    
+  }
+  
+  label {
+    /* Uniform size & alignment */
+    display: flex;
+    width: 90px;
+    padding: 15px;
+    font-family: sans-serif;
+    color:rgb(75, 71, 71);
+
+  
+    
+  }
+  
+  input, 
+  textarea {
+    /* To make sure that all text fields have the same font settings
+       By default, textareas have a monospace font */
+    font: 1em monospace ;
+
+    
+  
+    /* Uniform text field size */
+    width: 300px;
+    box-sizing: border-box;
+
+  
+    /* Match form field borders */
+    
+  }
+  
+  input:focus, 
+  textarea:focus {
+    /* Additional highlight for focused elements */
+    border-color:grey;
+
+    
+    
+    
+  }
+  .interest{
+    border-radius: 3px;
+
+    
+    
+  }
+  textarea {
+    /* Align multiline text fields with their labels */
+    vertical-align: text-top;
+    border-radius: 3px;
+    border-color:light grey;
+    border-style: outset;
+
+    
+    
+    
+  
+    /* Provide space to type some text */
+    height: 5em;
+    
+  }
+  
+  .button {
+    /* Align buttons with the text fields */
+     /* same size as the label elements */
+     padding-top: 15px;
+     
+
+  }
+  
+  button {
+    /* This extra margin represent roughly the same space as the space
+       between the labels and their text fields */
+    margin-left: .5em;
+    background-color:rgb(255, 196, 119);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    color: white;
+    border: solid 1px orange;
+    font-size: 12px;
+    text-shadow: 1px whitesmoke;
+    font: courier
+   
+    
+
+
+  }
