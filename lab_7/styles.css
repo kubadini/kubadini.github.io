@@ -29,7 +29,8 @@ h3 {
   align-items: flex-start;
   font-family: Helvetica, Geneva, Tahoma, sans-serif;
 }
-#map1 { height: 380px; 
+#map1 { width: 600px;
+  height: 400px; 
 }
 
 .wrapper {

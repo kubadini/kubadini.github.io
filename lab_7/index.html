@@ -31,6 +31,12 @@
     </div>
     <script>
         /* Your lab code can go here, or in an external file you include */
+    let allMarkers = [
+		["McKeldin Library",38.984901, -76.945221],
+		["marker2",39.095190,-76.848340],
+		["marker3",38.999000,-76.910930],
+		["marker4",38.848580,-76.885040]
+    ];
         const mymap = L.map('map1').setView([38.984901, -76.945221], 13);
              
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -42,12 +48,16 @@
       accessToken: 'pk.eyJ1Ijoia3ViYWRpbmkiLCJhIjoiY2s4bjd6ZzhyMHZzajNlcGhjYnJ0MTgzbCJ9.RqP5XnMuxpAGSSxUmfA2og'
   
   }).addTo(mymap);   
-  let marker = L.marker([38.984901, -76.945221]).addTo(mymap);
-  let marker1 = L.marker([-76.88516,38.848695]).addTo(mymap);
-  let marker2 = L.marker([-76.848331,38.870336]).addTo(mymap);
-  let marker3 = L.marker([-76.868838,38.889055]).addTo(mymap);
-  marker.bindPopup("Mckeldin Library").openPopup();
-let popup = L.popup();
+  // let marker = L.marker([38.984901, -76.945221]).addTo(mymap);
+  // marker.bindPopup("Mckeldin Library").openPopup();
+  for (let i = 0; i < allMarkers.length; i++) {
+			marker = new L.marker([allMarkers[i][1],allMarkers[i][2]])
+				.bindPopup(allMarkers[i][0])
+				.addTo(mymap)
+        let popup = L.popup();
+        
+		}
+
 
 function onMapClick(e) {
     popup
