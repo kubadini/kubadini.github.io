@@ -33,6 +33,16 @@ function processDataForFrontEnd(req, res) {
         console.log(data);
         res.send({ data: data }); // here's where we return data to the front end
       })
+      .then((data) => {
+        return data.reduce((result, current) => {
+          if (!result[current.category]) {
+            //c.categories.push(current.category)
+            result[current.category] = [];
+          }
+          result[current.category].push(current);
+          return result;
+        }, {});
+      })
       .catch((err) => {
         console.log(err);
         res.redirect('/error');
