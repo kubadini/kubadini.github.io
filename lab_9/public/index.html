@@ -10,10 +10,7 @@
   <div class="container">
     <div class="wrapper">
       <div class="header">Replace Me With Your Lab Page</div>
-      <div class="content">
-        <div id="chartContainer" style="height: 500px; width: 100%;"></div>
- 
-      </div>
+      <div class="content"></div>
       <div class="footer"></div>
     </div>
   </div>
@@ -21,19 +18,8 @@
     fetch('/api') // Rather than fetching from PG County, we're going to fetch from our own server.
       .then(res => res.json())
       .then(res => {
-        console.log("new data", res);
-          const reformattedData = Object.entries(res).map((m, i) => {
-            console.log(m);
-            return {
-              y: m[1].length,
-              label: m[0],
-            };
-          });
-          return reformattedData;
-        })
-        .then((results) => {
-          console.log(results);
-          const chart = new CanvasJS.Chart("chartContainer", {
+        // Here's where your chart code should go.
+        const chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
             theme: "light1",
             backgroundColor: "#F5DEB3",
@@ -72,10 +58,8 @@
             ],
           });
           chart.render();
-         // Here's where your chart code should go.
-      });
+        });
   </script>
-  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 
 </html>
