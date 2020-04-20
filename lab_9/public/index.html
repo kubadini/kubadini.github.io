@@ -10,7 +10,9 @@
   <div class="container">
     <div class="wrapper">
       <div class="header">Replace Me With Your Lab Page</div>
-      <div class="content"></div>
+      <div class="content">
+        
+      </div>
       <div class="footer"></div>
     </div>
   </div>
@@ -18,9 +20,61 @@
     fetch('/api') // Rather than fetching from PG County, we're going to fetch from our own server.
       .then(res => res.json())
       .then(res => {
-        // Here's where your chart code should go.
-      })
+        console.log("new data", res);
+          const reformattedData = Object.entries(res).map((m, i) => {
+            console.log(m);
+            return {
+              y: m[1].length,
+              label: m[0],
+            };
+          });
+          return reformattedData;
+        })
+        .then((results) => {
+          console.log(results);
+          const chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light1",
+            backgroundColor: "#F5DEB3",
+            title: {
+              text: "Let's Find Somewhere To Eat",
+            },
+            axisX: {
+              labelFontSize: 8,
+              margin: 10,
+              interval: 1,
+            },
+            axisY: {
+              scaleBreaks: {
+                customBreaks: [
+                  {
+                    startValue: 20,
+                    endValue: 35,
+                  },
+                  {
+                    startValue: 60,
+                    endValue: 120,
+                  },
+                  {
+                    startValue: 160,
+                    endValue: 220,
+                  },
+                ],
+              },
+            },
+            data: [
+              {
+                type: "column",
+                color: "peru",
+                dataPoints: results,
+              },
+            ],
+          });
+          chart.render();
+         // Here's where your chart code should go.
+      });
   </script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 
 </html>
