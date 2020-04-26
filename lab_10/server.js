@@ -58,18 +58,24 @@ app
     console.log("/api post request", req.body);
     if (!req.body.name) {
       console.log(req.body);
-      res.status("418").send("something went wrong, additionally i am a teapot");
+      res
+        .status("418")
+        .send("something went wrong, additionally i am a teapot");
     } else {
       writeUser(req.body.name, dbSettings)
-      .then((result) => {
-        console.log(result);
-        res.send("your request was successful"); // simple mode
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    }
-  });
+        .then((result) => {
+          console.log(result);
+          res.send("your request was successful"); // simple mode
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+  }})
+  .put((req, res) => {
+      console.log("this is supposed to be a PUT request", req.body)
+        res.send('PUT request')
+        })
+  ;
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
