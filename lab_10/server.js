@@ -73,7 +73,7 @@ app
   }})
   .put((req, res) => {
       console.log("this is supposed to be a PUT request", req.body)
-        res.send('PUT request')
+        res.send('Form Submitted')
         })
   ;
 
