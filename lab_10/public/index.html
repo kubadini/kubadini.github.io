@@ -14,11 +14,15 @@
           <form class="targetForm" id="labForm">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" />
+            <Label>Zip Code</Label>
+            <input type="text" pattern="[0-9]{5}" title="Five digit zip code" /> <!--Cite: stackoverflow --> 
+
             <label for="interests">Interests</label>
             <textarea id="interests" name="interests" rows="5" cols="33">
                 Default text says what?
             </textarea
-            ><br />
+            >
+            <br />
             <button id="formBtn">Submit</button>
           </form>
         </div>
@@ -33,7 +37,7 @@
         const formToSend = new FormData(target);
 
         fetch("/api", {
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
@@ -48,6 +52,7 @@
             target.append(`${txtresponse}`);
           });
       }
+      
 
       const formBtn = document.querySelector("#formBtn");
       formBtn.addEventListener("click", sendForm);
