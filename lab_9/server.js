@@ -64,7 +64,7 @@ function processDataForFrontEnd(req, res) {
       })// data is being processed here 
       .then((data) => {
         console.log(data);
-        res.send({ data: data }); // here's where we return data to the front end
+        res.send({ reformattedData: data }); // here's where we return data to the front end
       })
       
       .catch((err) => {
